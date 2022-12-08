@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.wrapTeam {
+    width: 100%;
+    padding: 65px 40px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    font-family: 'Comfortaa', cursive;
+}
+
+.teamTextHead {
+    font-size: 40px;
+    margin: 40px;
+}
+
+#red {
+    color: #FF344D;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    transition: 1s;
+}
+
+a:hover #blue {
+    color: #333;
+}
+
+a:hover {
+    color: #3B569E;
+}
+
+#blue {
+    color: #3B569E;
+}
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    background-color: white;
+    box-shadow: 0 0 10px #333;
+    border-radius: 20px;
+    margin: 50px;
+    margin-top: 100px;
+    text-align: center;
+    /*    font-size: 30px;*/
+    font-size: 25px;
+    /*    border: 1px solid #000;*/
+    text-decoration: none;
+    color: #000;
+    z-index: 10;
+    position: relative;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#basa {
+    color: #000;
+}
+
+a:hover #basa {
+    color: #3B569E;
+}
+
+.wrapTeam::before{
+    content: url(../img/Vector\ 9.png);
+}
+.wrapTeam::before {
+    content: url(../img/Vector\ 9.png);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    margin-bottom: 100px;
+    margin-top: -400px;
+    position: absolute;
+    z-index: -100;
+}
+
+.wrapTeam::after{
+    content: url(../img/Vector\ 8.png);
+}
+.wrapTeam::after {
+    content: url(../img/Vector\ 8.png);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    margin-top: 100px;
+    margin-bottom: -400px;
+    position: absolute;
+    z-index: -100;
+}
+
+.mig {
+    border-radius: 10px 10px 0 0;
+    width: 340px;
+    height: 50%;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    margin: 0;
+    margin-left: -12px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    transition: 1s;
+    z-index: 0;
+    position: realitive;
+}
+
+.trygle {
+    width: 0;
+    position: realitive;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 19px solid #fff;
+    position: relative;
+    transition: 1s;
+    z-index: 1;
+}
+
+.box:hover .mig {
+/*    animation: trigle_upCSS 1.5s linear;*/
+    height: 60%;
+}
+
+.box:hover .trygle {
+/*    animation: trigle_upCSS 1.5s linear;*/
+/*    ---------------------------------------------------*/
+    margin-bottom: 15%;
+/*    ---------------------------------------------------*/
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+    border-bottom: 38px solid #fff;
+}
+
+/*
+@keyframes trigle_upCSS {
+
+    0%,
+    100% {
+        margin-bottom: 0;
+    }
+
+    60% {
+        margin-bottom: 100%;
+    }
+
+    61% {
+        display: none;
+        margin-bottom: -15%;
+    }
+    
+    70%{
+        display: flex;
+        margin-bottom: 15%;
+        transition: 2s;
+    }
+    
+    80%{
+        margin-bottom: 10%;
+        transition: 2s;
+    }
+    
+    95%{
+        margin-bottom: 15%;
+        transition: 2s;
+    }
+}
+*/

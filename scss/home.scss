@@ -1,0 +1,337 @@
+@mixin flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
+
+.swiper {
+  width: 100%; height: 100vh;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 0;
+
+  .swiper-wrapper {
+    width: 100%; height: 100vh;
+
+    .swiper-slide {
+      width: 100%; height: 100%;
+      background-size: cover;
+  
+      &:nth-child(2) {
+        background-image: url('../img/background.webp');
+      }
+  
+      &:nth-child(1) {
+        background-image: url('../img/backgroundFlag.webp');
+      }
+    }
+  }
+
+  @media (max-height: 608px) {
+    height: 150vh;
+
+    .swiper-wrapper {
+      height: 150vh;
+
+      .swiper-slide {
+        height: 150vh;
+      }
+    }
+  }
+}
+
+.wrap__home {
+  width: 100%; min-height: 100vh;
+  @include flexSpaceBetween();
+  flex-direction: column;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 1;
+
+  &__header {
+    width: 100%; min-height: 131px;
+    @include flexSpaceBetween();
+    padding: 45px 111px;
+
+    &__logo {
+      width: 336px; height: 134px;
+  
+      img {
+        width: 100%; height: 100%;
+      }
+    }
+
+    &__burger-btn {
+      width: 47px; height: 26px;
+      @include flexSpaceBetween();
+      display: none;
+      align-items: flex-end;
+      flex-direction: column;
+      cursor: pointer;
+
+      &__line {
+        width: 47px; height: 2px;
+        background-color: #fff;
+
+        &:nth-child(2) {
+          width: 41px;
+        }
+      }
+    }
+
+    &__nav {
+      &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 27px;
+
+        &:hover {
+          .circle {
+            background-color: #FF344D
+          }
+
+          .circleAnimated {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+      
+      ul {
+        @include flexSpaceBetween();
+
+        li {
+          list-style-type: none;
+
+          a {
+            font-family: 'Montserrat';
+            text-decoration: none;
+            color: #fff;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-left: 27px;
+            position: relative;
+
+            .circleAnimated {
+              visibility: hidden;
+              opacity: 0;
+              position: absolute;
+              width: 33px; height: 33px;
+              background-color: rgba(255, 52, 77, 0.7);
+              border-radius: 100%;
+              top: -10px; left: -10px;
+              transition: all .6s ease-in-out;
+            }
+          }
+        }
+
+        span {
+          .circle {
+            width: 12px; height: 12px;
+            background-color: #fff;
+            border-radius: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__main {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 141px;
+    gap: 50px;
+
+    &__play-btn {
+      width: 246px; height: 246px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      z-index: 999;
+
+      .play-icon {
+        position: absolute;
+        margin-left: 10px;
+        transition: all .6s ease-in-out;
+        left: 38%;
+      }
+
+      .pause-icon {
+        position: absolute;
+        opacity: 0;
+        margin-right: 10px;
+        transition: all .6s ease-in-out;
+        left: 44%;
+      }
+
+      &__circle-top {
+        width: 246px; height: 246px;
+        border-radius: 100%;
+        border: 1px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .6s ease-in-out;
+        position: absolute;
+
+        &__bottom {
+          width: 189.5px; height: 189.5px;
+          border-radius: 100%;
+          border: 1px solid #fff;
+          background-color: rgba(255, 255, 255, 0.24);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &__wrapper {
+            width: 150px; height: 150px;
+            border-radius: 100%;
+            background-color: #F3354C;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    &__song-info {      
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding-left: 20px;
+      
+      &__name {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 45px;
+        letter-spacing: 0.075em;
+        color: #FFFFFF;
+        gap: 27px;
+
+        &__author {
+          font-weight: 400;
+          font-size: 40px;
+        }
+      }
+
+      &__radioWave {
+        width: 100%; height: 30px;
+        @include flexSpaceBetween();
+
+        canvas {
+          position: absolute;
+          bottom: 30px; left: 25%;
+          width: 50%; height: 15%;
+          border-radius: 10px;
+        }
+
+        span {
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 600;
+          color: #fff;
+          letter-spacing: 0.075em;
+          font-size: 20px;
+          height: 100%; width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    width: 100%; min-height: 85px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 111px 85px 0;
+    position: relative;
+
+    &__controlers {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+
+      svg {
+        cursor: pointer;
+
+        &:nth-child(1) {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  // Media queries 
+  @media (max-width: 1273px) {
+    &__header {
+      &__burger-btn {
+        display: flex;
+      }
+
+      &__nav {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    min-height: 70vh;
+    justify-content: space-around;
+
+    &__main {
+      padding-bottom: 120px;
+      flex-direction: column;
+
+      &__song-info {
+        align-items: center;
+
+        span {
+          width: 100%;
+        }
+
+        canvas {
+          height: 10%;
+          bottom: 20px;
+        }
+      }
+    }
+
+    &__footer {
+      position: absolute;
+      z-index: 0;
+      height: 30%;
+      align-items: flex-end;
+
+      &__controlers {
+        width: 85%;
+
+        svg {
+          width: 43px; height: 35px;
+
+          &:nth-child(1) {
+            transform: rotate(0);
+          }
+
+          &:nth-child(2) {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}

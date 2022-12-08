@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Yantarne FM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/Team.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js" integrity="sha512-MefNfAGJ/pEy89xLOFs3V6pYPs6AmUhXJrRlydI/9wZuGrqxmrdQ80zKHUcyadAcpH67teDZcBeS6oMJLPtTqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/partners.css">
+    <link rel="stylesheet" href="./css/Team.css">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"></div>
+      <div class="swiper-slide"></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <audio crossorigin="anonymous" id="audio" src="http://complex.in.ua:80/yantarne" style="display: none;" class="wrap__audio"></audio>
+    <div class="wrap__burger-menu">
+
+    </div>
+    <div class="wrap__home">
+      <header class="wrap__home__header">
+        <div class="wrap__home__header__logo">
+          <img src="./img/logo.webp" alt="Yantarne Logo">
+        </div>
+        <div class="wrap__home__header__burger-btn">
+          <span class="wrap__home__header__burger-btn__line"></span>
+          <span class="wrap__home__header__burger-btn__line"></span>
+          <span class="wrap__home__header__burger-btn__line"></span>
+        </div>
+        <nav class="wrap__home__header__nav">
+          <ul>
+            <div class="wrap__home__header__nav__item">
+              <li><a href="#"><span class="circleAnimated"></span>розклад</a></li>
+              <span><div class="circle"></div></span>
+            </div>
+            <div class="wrap__home__header__nav__item">
+              <li><a href="#"><span class="circleAnimated"></span>хто ми</a></li>
+              <span><div class="circle"></div></span>
+            </div>
+            <div class="wrap__home__header__nav__item">
+              <li><a href="#"><span class="circleAnimated"></span>наші друзі</a></li>
+              <span><div class="circle"></div></span>
+            </div>
+            <div class="wrap__home__header__nav__item">
+              <li><a href="#"><span class="circleAnimated"></span>контакти</a></li></li>
+            </div>
+          </ul>
+        </nav>
+      </header>
+      <div class="wrap__home__main">
+        <div class="wrap__home__main__play-btn" id="playBtn">
+          <div class="wrap__home__main__play-btn__circle-top" id="topCircle"></div>
+          <div class="wrap__home__main__play-btn__circle-top__bottom" id="bottomCircle">
+            <div class="wrap__home__main__play-btn__circle-top__bottom__wrapper">
+              <svg class="play-icon" id="play" xmlns="http://www.w3.org/2000/svg" width="47" height="52" viewBox="0 0 47 52" fill="none">
+                <path d="M44.8684 23.4019C46.8684 24.5566 46.8684 27.4434 44.8684 28.5981L5.31578 51.4338C3.31578 52.5885 0.815781 51.1451 0.815781 48.8357V3.16427C0.815781 0.854867 3.31578 -0.58851 5.31578 0.566191L44.8684 23.4019Z" fill="white"/>
+              </svg>
+              <svg class="pause-icon" id="pause" xmlns="http://www.w3.org/2000/svg" width="30" height="52" viewBox="0 0 15 21" fill="none">
+                <rect x="0.707031" y="0.130234" width="3.55092" height="20.5954" rx="1.77546" fill="white"/>
+                <rect x="11.3597" y="0.130234" width="3.55092" height="20.5954" rx="1.77546" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="wrap__home__main__song-info">
+          <h3 class="wrap__home__main__song-info__name" id="author"><span class="wrap__home__main__song-info__name__author" id="songTitle"></span></h3>
+          <div class="wrap__home__main__song-info__radioWave">
+            <canvas class="visualizer"></canvas>
+            <span>88.9</span>
+          </div>
+        </div>
+      </div>
+      <div class="wrap__home__footer">
+        <div class="wrap__home__footer__controlers">
+          <svg class="swiper-button-prev" xmlns="http://www.w3.org/2000/svg" width="33" height="39" viewBox="0 0 33 39" fill="none">
+            <path d="M2.1613 22.0562C0.25497 20.8852 0.254974 18.1148 2.1613 16.9438L28.4297 0.807442C30.4286 -0.420441 33 1.01778 33 3.36367L33 35.6363C33 37.9822 30.4286 39.4204 28.4297 38.1926L2.1613 22.0562Z" fill="white" fill-opacity="0.8"/>
+          </svg>
+          <svg class="swiper-button-next" xmlns="http://www.w3.org/2000/svg" width="33" height="39" viewBox="0 0 33 39" fill="none">
+            <path d="M2.1613 22.0562C0.25497 20.8852 0.254974 18.1148 2.1613 16.9438L28.4297 0.807442C30.4286 -0.420441 33 1.01778 33 3.36367L33 35.6363C33 37.9822 30.4286 39.4204 28.4297 38.1926L2.1613 22.0562Z" fill="white" fill-opacity="0.8"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="wrapTeam">
+      <h2 class="teamTextHead">Команда <span id="red">Yantarne</span>.<span id="red">fm</span></h2>
+      <div class="row row-cols-3"></div>
+    </div>
+     <!-- partners -->
+    <!-- <div class="partners">
+      <header class="partners__header">
+        <h1 class="partners__header__heading">наші <span> друзі </span></h1>
+        <p class="partners__header__proposition">Тут може бути <span>ваш</span> логотип</p>
+      </header>
+      <main class="partners__main">
+        <div class="partners__main__row" id="partnersRow"></div>
+
+      </main>
+
+    </div> -->
+    <!-- partners END -->
+  </div>
+     
+    <script src="./js/playBtn.js" type="module"></script>
+    <script src="./Team.js"></script>
+    <script src="./js/partners.js"></script>
+    <script src="./js/audio.js"></script>
+    <script src="./js/swiper.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+.swiper {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; }
+  .swiper .swiper-wrapper {
+    width: 100%;
+    height: 100vh; }
+    .swiper .swiper-wrapper .swiper-slide {
+      width: 100%;
+      height: 100%;
+      background-size: cover; }
+      .swiper .swiper-wrapper .swiper-slide:nth-child(2) {
+        background-image: url("../img/background.webp"); }
+      .swiper .swiper-wrapper .swiper-slide:nth-child(1) {
+        background-image: url("../img/backgroundFlag.webp"); }
+  @media (max-height: 608px) {
+    .swiper {
+      height: 150vh; }
+      .swiper .swiper-wrapper {
+        height: 150vh; }
+        .swiper .swiper-wrapper .swiper-slide {
+          height: 150vh; } }
+
+.wrap__home {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; }
+  .wrap__home__header {
+    width: 100%;
+    min-height: 131px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 111px; }
+    .wrap__home__header__logo {
+      width: 336px;
+      height: 134px; }
+      .wrap__home__header__logo img {
+        width: 100%;
+        height: 100%; }
+    .wrap__home__header__burger-btn {
+      width: 47px;
+      height: 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      display: none;
+      align-items: flex-end;
+      flex-direction: column;
+      cursor: pointer; }
+      .wrap__home__header__burger-btn__line {
+        width: 47px;
+        height: 2px;
+        background-color: #fff; }
+        .wrap__home__header__burger-btn__line:nth-child(2) {
+          width: 41px; }
+    .wrap__home__header__nav__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 27px; }
+      .wrap__home__header__nav__item:hover .circle {
+        background-color: #FF344D; }
+      .wrap__home__header__nav__item:hover .circleAnimated {
+        opacity: 1;
+        visibility: visible; }
+    .wrap__home__header__nav ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .wrap__home__header__nav ul li {
+        list-style-type: none; }
+        .wrap__home__header__nav ul li a {
+          font-family: 'Montserrat';
+          text-decoration: none;
+          color: #fff;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          text-transform: uppercase;
+          margin-left: 27px;
+          position: relative; }
+          .wrap__home__header__nav ul li a .circleAnimated {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            width: 33px;
+            height: 33px;
+            background-color: rgba(255, 52, 77, 0.7);
+            border-radius: 100%;
+            top: -10px;
+            left: -10px;
+            transition: all .6s ease-in-out; }
+      .wrap__home__header__nav ul span .circle {
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        border-radius: 100%; }
+  .wrap__home__main {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 141px;
+    gap: 50px; }
+    .wrap__home__main__play-btn {
+      width: 246px;
+      height: 246px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      z-index: 999; }
+      .wrap__home__main__play-btn .play-icon {
+        position: absolute;
+        margin-left: 10px;
+        transition: all .6s ease-in-out;
+        left: 38%; }
+      .wrap__home__main__play-btn .pause-icon {
+        position: absolute;
+        opacity: 0;
+        margin-right: 10px;
+        transition: all .6s ease-in-out;
+        left: 44%; }
+      .wrap__home__main__play-btn__circle-top {
+        width: 246px;
+        height: 246px;
+        border-radius: 100%;
+        border: 1px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .6s ease-in-out;
+        position: absolute; }
+        .wrap__home__main__play-btn__circle-top__bottom {
+          width: 189.5px;
+          height: 189.5px;
+          border-radius: 100%;
+          border: 1px solid #fff;
+          background-color: rgba(255, 255, 255, 0.24);
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .wrap__home__main__play-btn__circle-top__bottom__wrapper {
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            background-color: #F3354C;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+    .wrap__home__main__song-info {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding-left: 20px; }
+      .wrap__home__main__song-info__name {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 45px;
+        letter-spacing: 0.075em;
+        color: #FFFFFF;
+        gap: 27px; }
+        .wrap__home__main__song-info__name__author {
+          font-weight: 400;
+          font-size: 40px; }
+      .wrap__home__main__song-info__radioWave {
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .wrap__home__main__song-info__radioWave canvas {
+          position: absolute;
+          bottom: 30px;
+          left: 25%;
+          width: 50%;
+          height: 15%;
+          border-radius: 10px; }
+        .wrap__home__main__song-info__radioWave span {
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 600;
+          color: #fff;
+          letter-spacing: 0.075em;
+          font-size: 20px;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+  .wrap__home__footer {
+    width: 100%;
+    min-height: 85px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 111px 85px 0;
+    position: relative; }
+    .wrap__home__footer__controlers {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      position: relative; }
+      .wrap__home__footer__controlers svg {
+        cursor: pointer; }
+        .wrap__home__footer__controlers svg:nth-child(1) {
+          transform: rotate(180deg); }
+  @media (max-width: 1273px) {
+    .wrap__home__header__burger-btn {
+      display: flex; }
+    .wrap__home__header__nav {
+      display: none; } }
+  @media (max-width: 1000px) {
+    .wrap__home {
+      min-height: 70vh;
+      justify-content: space-around; }
+      .wrap__home__main {
+        padding-bottom: 120px;
+        flex-direction: column; }
+        .wrap__home__main__song-info {
+          align-items: center; }
+          .wrap__home__main__song-info span {
+            width: 100%; }
+          .wrap__home__main__song-info canvas {
+            height: 10%;
+            bottom: 20px; }
+      .wrap__home__footer {
+        position: absolute;
+        z-index: 0;
+        height: 30%;
+        align-items: flex-end; }
+        .wrap__home__footer__controlers {
+          width: 85%; }
+          .wrap__home__footer__controlers svg {
+            width: 43px;
+            height: 35px; }
+            .wrap__home__footer__controlers svg:nth-child(1) {
+              transform: rotate(0); }
+            .wrap__home__footer__controlers svg:nth-child(2) {
+              transform: rotate(180deg); } }
+
+/*# sourceMappingURL=home.css.map */
