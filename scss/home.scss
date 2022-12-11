@@ -38,6 +38,18 @@
       }
     }
   }
+
+  @media (min-height: 580px) {
+    height: 150vh;
+
+    .swiper-wrapper {
+      height: 150vh;
+
+      .swiper-slide {
+        height: 150vh;
+      }
+    }
+  }
 }
 
 .wrap__home {
