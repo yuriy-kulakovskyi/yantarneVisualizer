@@ -24,6 +24,10 @@ burgerBtn.onclick = () => {
       swiperBlur.style.filter = 'blur(30px)';
       burgerHeader.append(homeHeader);
       document.querySelector(".wrap__home__header__logo").style.display = 'none';
+      document.querySelectorAll(".burgerLink")[0].style.left = "0";
+      document.querySelectorAll(".burgerLink")[1].style.left = "0";
+      document.querySelectorAll(".burgerLink")[2].style.left = "0";
+      document.querySelectorAll(".burgerLink")[3].style.left = "0";
     }, 50);
 
     clicked = true;
