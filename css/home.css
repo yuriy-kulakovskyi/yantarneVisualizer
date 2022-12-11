@@ -23,13 +23,13 @@
         height: 150vh; }
         .swiper .swiper-wrapper .swiper-slide {
           height: 150vh; } }
-  @media (min-height: 600px) {
+  @media (max-height: 500px) {
     .swiper {
-      height: 200vh; }
+      height: 250vh; }
       .swiper .swiper-wrapper {
-        height: 200vh; }
+        height: 250vh; }
         .swiper .swiper-wrapper .swiper-slide {
-          height: 200vh; } }
+          height: 250vh; } }
 
 .wrap__home {
   width: 100%;

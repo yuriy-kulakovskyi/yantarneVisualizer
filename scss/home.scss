@@ -39,14 +39,14 @@
     }
   }
 
-  @media (min-height: 600px) {
-    height: 200vh;
+  @media (max-height: 500px) {
+    height: 250vh;
 
     .swiper-wrapper {
-      height: 200vh;
+      height: 250vh;
 
       .swiper-slide {
-        height: 200vh;
+        height: 250vh;
       }
     }
   }
