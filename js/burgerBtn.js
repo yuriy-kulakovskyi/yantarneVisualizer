@@ -48,6 +48,10 @@ burgerBtn.onclick = () => {
       home.append(homeMain);
       home.append(homeFooter);
       document.querySelector(".wrap__home__header__logo").style.display = 'block';
+      document.querySelectorAll(".burgerLink")[0].style.left = "100%";
+      document.querySelectorAll(".burgerLink")[1].style.left = "100%";
+      document.querySelectorAll(".burgerLink")[2].style.left = "100%";
+      document.querySelectorAll(".burgerLink")[3].style.left = "100%";
     }, 50);
 
     clicked = false;
