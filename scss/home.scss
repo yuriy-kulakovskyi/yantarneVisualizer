@@ -72,6 +72,7 @@
       &__line {
         width: 47px; height: 2px;
         background-color: #fff;
+        transition: .2s ease-in;
 
         &:nth-child(2) {
           width: 41px;

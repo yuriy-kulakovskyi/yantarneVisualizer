@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/partners.css">
     <link rel="stylesheet" href="./css/Team.css">
+    <link rel="stylesheet" href="./css/burgerMenu.css">
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -26,7 +27,7 @@
 </head>
 
 <body>
-  <div class="swiper">
+  <div class="swiper" id="swiperBlur">
     <div class="swiper-wrapper">
       <div class="swiper-slide"></div>
       <div class="swiper-slide"></div>
@@ -34,15 +35,24 @@
   </div>
   <div class="wrap">
     <audio crossorigin="anonymous" id="audio" src="http://complex.in.ua:80/yantarne" style="display: none;" class="wrap__audio"></audio>
-    <div class="wrap__burger-menu">
-
+    <div class="wrap__burger-menu" id="burgerMenu">
+      <header class="wrap__burger-menu__header" id="burgerHeader">
+      </header>
+      <nav class="wrap__burger-menu__nav">
+        <ul>
+          <li><a href="#">Розклад ефірів</a></li>
+          <li><a href="#">Наша команда</a></li>
+          <li><a href="#">Про нас</a></li>
+          <li><a href="#">Нащі друзі</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="wrap__home">
-      <header class="wrap__home__header">
+    <div class="wrap__home" id="home">
+      <header class="wrap__home__header" id="homeHeader">
         <div class="wrap__home__header__logo">
           <img src="./img/logo.webp" alt="Yantarne Logo">
         </div>
-        <div class="wrap__home__header__burger-btn">
+        <div class="wrap__home__header__burger-btn" id="burgerBtn">
           <span class="wrap__home__header__burger-btn__line"></span>
           <span class="wrap__home__header__burger-btn__line"></span>
           <span class="wrap__home__header__burger-btn__line"></span>
@@ -67,7 +77,7 @@
           </ul>
         </nav>
       </header>
-      <div class="wrap__home__main">
+      <div class="wrap__home__main" id="homeMain">
         <div class="wrap__home__main__play-btn" id="playBtn">
           <div class="wrap__home__main__play-btn__circle-top" id="topCircle"></div>
           <div class="wrap__home__main__play-btn__circle-top__bottom" id="bottomCircle">
@@ -90,7 +100,7 @@
           </div>
         </div>
       </div>
-      <div class="wrap__home__footer">
+      <div class="wrap__home__footer" id="homeFooter">
         <div class="wrap__home__footer__controlers">
           <svg class="swiper-button-prev" xmlns="http://www.w3.org/2000/svg" width="33" height="39" viewBox="0 0 33 39" fill="none">
             <path d="M2.1613 22.0562C0.25497 20.8852 0.254974 18.1148 2.1613 16.9438L28.4297 0.807442C30.4286 -0.420441 33 1.01778 33 3.36367L33 35.6363C33 37.9822 30.4286 39.4204 28.4297 38.1926L2.1613 22.0562Z" fill="white" fill-opacity="0.8"/>
@@ -125,6 +135,7 @@
     <script src="./js/partners.js"></script>
     <script src="./js/audio.js"></script>
     <script src="./js/swiper.js"></script>
+    <script src="./js/burgerBtn.js"></script>
 
     <script>
         AOS.init();

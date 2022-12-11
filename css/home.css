@@ -61,7 +61,8 @@
       .wrap__home__header__burger-btn__line {
         width: 47px;
         height: 2px;
-        background-color: #fff; }
+        background-color: #fff;
+        transition: .2s ease-in; }
         .wrap__home__header__burger-btn__line:nth-child(2) {
           width: 41px; }
     .wrap__home__header__nav__item {
