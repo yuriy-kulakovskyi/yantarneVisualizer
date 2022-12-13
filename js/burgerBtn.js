@@ -8,6 +8,28 @@ const homeHeader = document.querySelector("#homeHeader");
 const homeMain = document.querySelector("#homeMain");
 const homeFooter = document.querySelector("#homeFooter");
 
+function preventDefault(e) {
+  e.preventDefault();
+}
+
+function preventDefaultForScrollKeys(e) {
+  if (keys[e.keyCode]) {
+    preventDefault(e);
+    return false;
+  }
+}
+
+let supportsPassive = false;
+try {
+  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+    get: function () { supportsPassive = true; } 
+  }));
+} catch(e) {}
+
+
+const wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+const wheelOpt = supportsPassive ? { passive: false } : false;
+
 let clicked = false;
 burgerBtn.onclick = () => {
   if (!clicked) {
@@ -17,13 +39,18 @@ burgerBtn.onclick = () => {
     burgerLines[1].style.display = 'none';
     burgerLines[2].style.transform = 'rotate(40deg)';
     burgerLines[2].style.width = '90px';
+
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
   
     setTimeout(() => {
       burgerMenu.style.transform = 'scale(1)';
       home.style.filter = 'blur(30px)';
       swiperBlur.style.filter = 'blur(30px)';
       burgerHeader.append(homeHeader);
-      document.querySelector(".wrap__home__header__logo").style.display = 'none';
+      document.querySelector(".wrap__home__header__logo").style.opacity = '0';
       document.querySelectorAll(".burgerLink")[0].style.left = "0";
       document.querySelectorAll(".burgerLink")[1].style.left = "0";
       document.querySelectorAll(".burgerLink")[2].style.left = "0";
@@ -40,6 +67,11 @@ burgerBtn.onclick = () => {
     burgerLines[2].style.transform = 'rotate(0)';
     burgerLines[2].style.width = '47px';
 
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+
     setTimeout(() => {
       burgerMenu.style.transform = 'scale(0)';
       home.style.filter = 'blur(0)';
@@ -47,7 +79,7 @@ burgerBtn.onclick = () => {
       home.append(homeHeader);
       home.append(homeMain);
       home.append(homeFooter);
-      document.querySelector(".wrap__home__header__logo").style.display = 'block';
+      document.querySelector(".wrap__home__header__logo").style.opacity = '1';
       document.querySelectorAll(".burgerLink")[0].style.left = "100%";
       document.querySelectorAll(".burgerLink")[1].style.left = "100%";
       document.querySelectorAll(".burgerLink")[2].style.left = "100%";
