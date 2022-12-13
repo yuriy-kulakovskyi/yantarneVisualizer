@@ -40,5 +40,15 @@
         width: 100%;
         left: 100%;
         text-align: center; }
+@media (max-width: 1200px) {
+  .wrap .wrap__burger-menu__header {
+    height: 100px; }
+  .wrap__burger-menu {
+    top: 0; }
+    .wrap__burger-menu__nav {
+      justify-content: center;
+      gap: 30px; }
+      .wrap__burger-menu__nav ul li a {
+        font-size: 30px; } }
 
 /*# sourceMappingURL=burgerMenu.css.map */

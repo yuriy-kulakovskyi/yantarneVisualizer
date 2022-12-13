@@ -50,4 +50,23 @@
       }
     }
   } 
+
+  @media (max-width: 1200px) {
+    .wrap__burger-menu__header {
+      height: 100px;
+    }
+
+    &__burger-menu {
+      top: 0;
+
+      &__nav {
+        justify-content: center;
+        gap: 30px;
+
+        ul li a {
+          font-size: 30px;
+        }
+      }
+    }
+  }
 }

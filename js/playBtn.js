@@ -26,7 +26,7 @@ playBtn.onclick = () => {
     const src = context.createMediaElementSource(audio); // Give the audio context an audio source,
     // to which can then be played and manipulated
     const analyser = context.createAnalyser(); // Create an analyser for the audio context
-    analyser.fftSize = 256;
+    analyser.fftSize = 512;
     src.connect(analyser); // Connects the audio context source to the analyser
     analyser.connect(context.destination); // End destination of an audio graph in a given context
 
@@ -40,7 +40,7 @@ playBtn.onclick = () => {
     const HEIGHT = canvas.height;
     const ctx = canvas.getContext("2d");
 
-    const barWidth = (WIDTH / bufferLength) * 5;
+    const barWidth = (WIDTH / bufferLength) * 6;
 
     let barHeight;
     let x = 0;
@@ -54,18 +54,27 @@ playBtn.onclick = () => {
       // Results in a normalized array of values between 0 and 255
       // Before this step, dataArray's values are all zeros (but with length of 8192)
 
-      ctx.fillStyle = "#fff"; // Clears canvas before rendering bars (black with opacity 0.2)
-      ctx.fillRect(0, 0, WIDTH, HEIGHT); // Fade effect, set opacity to 1 for sharper rendering of bars
+      ctx.clearRect(0, 0, WIDTH, HEIGHT);
+
 
       let bars = 30 // Set total number of bars you want per frame
 
       for (let i = 0; i < bars; i++) {
-        barHeight = (dataArray[i] * 0.5);
+        barHeight = (dataArray[i] / 5);
 
-        ctx.fillStyle = `#F3354C`;
+        ctx.fillStyle = `#fff`;
         ctx.fillRect(x, (HEIGHT - barHeight), barWidth, barHeight);
 
         x += barWidth + 3; // Gives 3px space between each bar
+
+        if(i === 12){
+          ctx.fillStyle = "rgba(0,0,0,0)";
+          ctx.fillRect(x, (HEIGHT - barHeight), barWidth, barHeight);
+          ctx.font = "20px Montserrat";
+          ctx.fillStyle = "#fff";
+          ctx.fillText("88.9", 140, 140);
+          x += barWidth + 60
+        }
       }
     }
 
